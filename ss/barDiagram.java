@@ -1,0 +1,43 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class barDiagram extends JPanel{
+	public void paint(Graphics g){
+		super.paint(g);
+
+		int barWidth = 50;
+		int startX = 100;
+		int maxHeight = 250;
+		int barSpacing = 50;
+
+		int[] data = { 20,35,30,15 }; 
+		int total = 100;
+		String[] names = { "JAVA", "PHP", "PYTHON", "goLANG" }; 
+		Color[] colors = { Color.RED, Color.GREEN, Color.BLUE, Color.BLACK }; 
+    
+	    for (int i = 0; i < data.length; i++) {
+            int h = (maxHeight * data[i]) / total;
+            g.setColor(colors[i]);
+            g.fillRect(startX, maxHeight - h, barWidth, h);
+            g.drawString(names[i], startX, maxHeight + 15);
+            startX += barWidth + barSpacing;
+        }
+		drawScale(g, startX + barWidth + barSpacing, maxHeight);
+	}
+	private void drawScale(Graphics g, int x, int maxHeight) {
+		g.setColor(Color.BLACK);
+		for (int i = 0; i <= 5; i++) {
+    		int y = maxHeight - (maxHeight * i / 5);
+    		g.drawLine(x, y, x + 10, y);
+	   		g.drawString(Integer.toString(i * 10), x + 15, y);
+		}
+	}
+	public static void main(String[] args){
+		JFrame frame = new JFrame();
+		frame.setSize(700,700);
+		barDiagram bd = new barDiagram();
+		frame.add(bd);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}
