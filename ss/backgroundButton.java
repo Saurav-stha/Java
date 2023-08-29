@@ -8,12 +8,10 @@ public class backgroundButton extends JFrame implements ActionListener{
 	backgroundButton(){
 		b1= new JButton();
 		b1.setText("RED");
-		// b1.setBounds(100,10,80,50);
 		b1.addActionListener(this);
 
 		b2= new JButton();
 		b2.setText("BLUE");
-		// b2.setBounds(185,10,80,50);
 		b2.addActionListener(this);
 
 		setVisible(true);

@@ -4,7 +4,7 @@ public class exceptionHandling{
             int res = divide(1,0);
         }
         catch( ArithmeticException e){
-            System.out.println("Result = "+e);
+            System.out.println("Result = "+e.getMessage());
         }
         finally{
             System.out.println("Finally block...");

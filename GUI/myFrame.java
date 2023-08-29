@@ -1,10 +1,13 @@
-import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class myButton extends JFrame implements ActionListener{
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class myFrame extends JFrame implements ActionListener{
 
 	JButton button;
-	myButton(){
+	myFrame(){
 		// ImageIcon icon = new ImageIcon("./sth.jpg");
 
 		button = new JButton();
@@ -28,6 +31,6 @@ public class myButton extends JFrame implements ActionListener{
 		}
 	}
 	public static void main(String [] args){
-		new myButton();
+		new myFrame();
 	}
 }

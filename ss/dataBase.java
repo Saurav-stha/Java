@@ -1,4 +1,4 @@
-mport java.sql.*;
+import java.sql.*;
 import java.util.Scanner;
 
 public class dataBase{
@@ -10,7 +10,12 @@ public class dataBase{
 			Statement stmt = con.createStatement();
 			stmt.executeUpdate("CREATE DATABASE IF NOT EXIST formdb");
 			stmt.executeUpdate("USE fromdb");
-			stmt.executeUpdate("CREATE TABLE IF NOT EXIST userinfo ("+"id INT PRIMARY KEY, "+" name VARCHAR(255),"+"address VARCHAR(255),"+"age INT)");
+			stmt.executeUpdate("CREATE TABLE IF NOT EXIST userinfo ("
+				+"id INT PRIMARY KEY, "
+				+" name VARCHAR(255),"
+				+"address VARCHAR(255),"
+				+"age INT)"
+			);
 			stmt.executeUpdate("INSERT INTO userinfo VALUES( 1, 'Sulav','Rambazar',21)");
 			stmt.executeUpdate("INSERT INTO userinfo VALUES(2, 'Nirdesh','malepatan',22)");
 			
@@ -33,7 +38,6 @@ public class dataBase{
 				prepStmt.setString(3,address);
 				prepStmt.setInt(4,age);
 				
-				
 				prepStmt.executeUpdate();
 			}
 			
@@ -55,7 +59,7 @@ public class dataBase{
 				System.out.println("Do you want to enter more data");
 				input = scanner.nextLine();
 			}
-			ResultSet resultSet = stmt.executeQuery("SELECT name, COUNT(name) AS count FROM userinfo GROUP BY name HAVING count>1");
+			ResultSet resultSet = stmt.executeQuery("SELECT name, COUNT(name) AS count FROM userinfo GROUP BY name HAVING count>1");//for searching same name ppl
 			while(resultSet.next()){
 				int id = resultSet.getInt("id");
 				String name = resultSet.getString("name"):

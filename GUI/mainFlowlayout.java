@@ -1,9 +1,16 @@
 // import java.awt.BorderLayout;
 // import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 class mainFlowlayout {
-	public static void main(String [] args){
+	public static void main(String [] args, Component component){
 
 		//FlowLayout = places comp in row, sized at the preferred size.
 		//				if horizontal space in container is too small,
@@ -22,7 +29,7 @@ class mainFlowlayout {
 		panel.setLayout(new FlowLayout());
 
 
-		panel.add(new JButton("b1"));
+		component = panel.add(new JButton("b1"));
 		panel.add(new JButton("b2"));
 		panel.add(new JButton("b3"));
 		panel.add(new JButton("b4"));

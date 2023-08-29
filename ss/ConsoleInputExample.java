@@ -19,7 +19,7 @@ public class ConsoleInputExample {
             System.out.println("Enter a paragraph of words (Type 'exit' on a new line to end):");
             StringBuilder paragraph = new StringBuilder();
             String inputLine;
-            while (!(inputLine = reader.readLine()).equals("exit")) {
+            while (!(inputLine = reader.readLine()).equalsIgnoreCase("exit")) {
                 paragraph.append(inputLine).append("\n");
             }
             System.out.println("You entered a paragraph of words:\n" + paragraph);

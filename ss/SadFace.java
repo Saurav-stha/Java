@@ -1,8 +1,14 @@
 import java.awt.*;
+import java.awt.event.*;
 public class SadFace extends Frame{
     public SadFace(){
         setSize(400,400);
         // setBackground(Color.GRAY);
+        addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                dispose();
+            }
+        });
     }
     public void paint(Graphics g){
         super.paint(g);
@@ -21,7 +27,7 @@ public class SadFace extends Frame{
         int y = 160;
         int width = 100;
         int height = 40;
-        int startAngle = 0;// 0 for smileyface
+        int startAngle = 180;// 0 for smileyface 180 for das
         int arcAngle = -180;
         g.drawArc(x, y, width, height, startAngle, arcAngle);
         

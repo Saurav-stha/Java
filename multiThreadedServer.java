@@ -25,20 +25,21 @@ class multiThreadedServer {
                 // This thread will handle the client separately
                 new Thread(clientSock).start();
             }
+            server.close();
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-        finally {
-            if (server != null) {
-                try {
-                    server.close();
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        // finally {
+        //     if (server != null) {
+        //         try {
+        //             server.close();
+        //         }
+        //         catch (IOException e) {
+        //             e.printStackTrace();
+        //         }
+        //     }
+        // }
     }
 
     // ClientHandler class
@@ -67,24 +68,25 @@ class multiThreadedServer {
                     System.out.printf(" Sent from the client: %s\n",line);
                     out.println(line);
                 }
+                out.close();in.close();clientSocket.close();
             }
             catch (IOException e) {
                 e.printStackTrace();
             }
-            finally {
-                try {
-                    if (out != null) {
-                        out.close();
-                    }
-                    if (in != null) {
-                        in.close();
-                        clientSocket.close();
-                    }
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            // finally {
+            //     try {
+            //         if (out != null) {
+            //             out.close();
+            //         }
+            //         if (in != null) {
+            //             in.close();
+            //             clientSocket.close();
+            //         }
+            //     }
+            //     catch (IOException e) {
+            //         e.printStackTrace();
+            //     }
+            // }
         }
     }
 }

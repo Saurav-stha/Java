@@ -1,7 +1,7 @@
-mport javax.swing.ImageIcon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class Main{
+public class mainOptionPane{
 
  public static void main(String[] args) {
  
@@ -18,9 +18,9 @@ public class Main{
   //int answer = JOptionPane.showConfirmDialog(null, "bro, do you even code?");
   //String name = JOptionPane.showInputDialog("What is your name?: ");
   
-  ImageIcon icon = new ImageIcon("smile.png");
+  final ImageIcon icon = new ImageIcon("smile.png");
   String[] responses = {"No, you are!","thank you!","*blush*"};
-  int answer = JOptionPane.showOptionDialog(
+  final int answer = JOptionPane.showOptionDialog(
     null,
     "You are the best! :D", 
     "Secret message", 

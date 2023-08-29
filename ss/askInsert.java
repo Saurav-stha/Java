@@ -1,5 +1,7 @@
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
 
  class askInsert{
 	public static void main(String [] a){
@@ -12,8 +14,8 @@ import java.util.*;
 
 			PreparedStatement pstmt = conn.prepareStatement(query);
 			Scanner sc = new Scanner(System.in);
-			boolean choice = true;
-			while(choice){
+			String choice = "y";
+			while(choice.equalsIgnoreCase("y")){
 				System.out.print("ID: ");
 				int id =sc.nextInt();
 				System.out.print("Name: ");
@@ -24,14 +26,12 @@ import java.util.*;
 				pstmt.setInt(1,id);
 				pstmt.setString(2,name);
 				pstmt.setString(3,ad);
-				pstmt.executeUpdate();
+				int rowsAffected = pstmt.executeUpdate();
 
-				System.out.println("\nSuccesffullyy inseorted yololo");
+				System.out.println("\nSuccesffullyy inseorted yololo\nRows affected: "+rowsAffected);
 
 				System.out.print("\n\nDo you want to insert more? (y/n)");
-				String ch = sc.nextLine();
-				if (ch.equals("n"))
-					choice=false;
+				choice = sc.nextLine();
 			}
 		}catch(Exception e){
 			e.printStackTrace();

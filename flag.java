@@ -26,7 +26,7 @@ class flag extends Frame{
 		g.drawPolygon(x,y,5);
 		//sun
 		g.setColor(Color.white);
-		g.fillOval(20,115,20,20);
+		g.fillOval(20,120,20,20);
 		//moon
 		g.drawArc(20,60,20,20,0,-180);
 		//line
@@ -34,8 +34,8 @@ class flag extends Frame{
 		g.drawLine(10,150,10,180);
 
 		//my nepal writing
-		// Font f = new Font("Arial",Font.PLAIN,24);
-		// g.setFont(f);
+		Font f = new Font("Arial",Font.BOLD,24);
+		g.setFont(f);
 		g.drawString("MY NEPAL",10,200);
 
 	}

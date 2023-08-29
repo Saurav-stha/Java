@@ -9,11 +9,11 @@ public class employeeNameSearch{
 
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost-80/pu","root","root");
 
-			Scanner sc = new Scanner(System.in);
-			String name = sc.next();
 			String sql = "SELECT * FROM Employee where name = ?";
 
 			PreparedStatement pstmt = conn.prepareStatement(sql);
+			Scanner sc = new Scanner(System.in);
+			String name = sc.next();
 			pstmt.setString(1,name);
 
 			ResultSet resultSet= pstmt.executeQuery();

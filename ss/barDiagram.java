@@ -7,11 +7,11 @@ public class barDiagram extends JPanel{
 
 		int barWidth = 50;
 		int startX = 100;
-		int maxHeight = 250;
+		int maxHeight = 550;
 		int barSpacing = 50;
 
-		int[] data = { 20,35,30,15 }; 
-		int total = 100;
+		int[] data = { 65,50,75,90 }; 
+		int total = 280;
 		String[] names = { "JAVA", "PHP", "PYTHON", "goLANG" }; 
 		Color[] colors = { Color.RED, Color.GREEN, Color.BLUE, Color.BLACK }; 
     
@@ -26,8 +26,8 @@ public class barDiagram extends JPanel{
 	}
 	private void drawScale(Graphics g, int x, int maxHeight) {
 		g.setColor(Color.BLACK);
-		for (int i = 0; i <= 5; i++) {
-    		int y = maxHeight - (maxHeight * i / 5);
+		for (int i = 0; i <= 10; i+=2) {
+    		int y = maxHeight - (maxHeight * i / 28);
     		g.drawLine(x, y, x + 10, y);
 	   		g.drawString(Integer.toString(i * 10), x + 15, y);
 		}

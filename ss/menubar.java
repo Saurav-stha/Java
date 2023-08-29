@@ -10,8 +10,8 @@ public class menubar
 			jf.setSize(500,500);
 			jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-			JMenuBar jmb = new JMenuBar();
-			jf.setJMenuBar(jmb);
+			// JMenuBar jmb = new JMenuBar();
+			jf.setJMenuBar(new JMenuBar());
 
 			JMenu file = new JMenu("File");
 			jmb.add(file);
@@ -25,7 +25,7 @@ public class menubar
 			JMenuItem close = new JMenuItem("Close");
 			close.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-JOptionPane.showMessageDialog(null, "Exiting from program", "title of dialog box", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Exiting from program", "title of dialog box", JOptionPane.WARNING_MESSAGE);
 				}
 			});
 			file.add(close);

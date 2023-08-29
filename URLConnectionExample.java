@@ -19,9 +19,8 @@ public class URLConnectionExample {
                 System.out.println(line);
             }
 
-            // Close the reader and input stream
+            // Close the reader and input strea
             reader.close();
-            // inputStream.close();
 
         } catch (IOException e) {
             e.printStackTrace();

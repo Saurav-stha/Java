@@ -11,17 +11,16 @@ public class DigitalClockApplet extends Applet {
         timeLabel.setFont(new Font("Arial", Font.BOLD, 24));
         add(timeLabel);
 
-        Thread clockThread = new Thread(() -> {
-            while (true) {
-                updateTime();
-                try {
-                    Thread.sleep(1000); // Update every 1 second
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        Thread clockThread = new Thread(this);
         clockThread.start();
+    }
+    public void run(){
+        while(true){
+            updateTime();
+            try{
+                Thread.sleep(1000);
+            }catch(InterruptedException ie){ System.out.println(e.getMessage());}
+        }
     }
 
     private void updateTime() {
